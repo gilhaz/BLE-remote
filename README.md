@@ -26,7 +26,7 @@ Requesting information ...
 In Terminal execute the following commands:
 *Replace any occurrence of 'bluez-5.50' with the newest version you find in [bluez.org](http://www.bluez.org/download/)*
 
-```
+```bash
 sudo wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.50.tar.xz
 dpkg --get-selections | grep -v deinstall | grep bluez
 tar xvf bluez-5.50.tar.xz

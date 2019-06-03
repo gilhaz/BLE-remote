@@ -12,9 +12,9 @@ Using a BLE remote for home automation with RaspberryPi.
 - RaspberryPi (tested on pi 3)
 - BLE remote
 
-Here is the result of 'hcitool leinfo' for the BLE remote I've used:
+Here is the result of ```hcitool leinfo``` for the BLE remote I've used:
 ```
-pi@raspberrypi:~ $ ***sudo hcitool leinfo <MAC-ADDRESS>***
+pi@raspberrypi:~ $ sudo hcitool leinfo <MAC-ADDRESS>
 Requesting information ...
 	Handle: 64 (0x0040)
 	LMP Version: 4.0 (0x6) LMP Subversion: 0x4103

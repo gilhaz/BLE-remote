@@ -13,7 +13,7 @@ Using a BLE remote for home automation with RaspberryPi.
 - BLE remote
 
 Here is the result of ```hcitool leinfo``` for the BLE remote I've used:
-```bash
+```shell
 pi@raspberrypi:~ $ sudo hcitool leinfo <MAC-ADDRESS>
 Requesting information ...
 	Handle: 64 (0x0040)
@@ -26,7 +26,7 @@ Requesting information ...
 In Terminal execute the following commands:
 *Replace any occurrence of 'bluez-5.50' with the newest version you find in [bluez.org](http://www.bluez.org/download/)*
 
-```bash
+```shell
 sudo wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.50.tar.xz
 dpkg --get-selections | grep -v deinstall | grep bluez
 tar xvf bluez-5.50.tar.xz

@@ -21,8 +21,8 @@ Requesting information ...
 	Manufacturer: Telink Semiconductor Co. Ltd (529)
 	Features: 0x01 0x00 0x00 0x00 0x00 0x00 0x00 0x00
 ```
->You can find the MAC address by;\
-1: running ```hcitool lescan```\
+>You can find the MAC address by;  \
+1: running ```hcitool lescan```  \
 2: turn on the device and watch for the last one added.
 
 ### Install bluez (bluetooth protocol stack)

@@ -13,7 +13,7 @@ Using a BLE remote for home automation with RaspberryPi.
 - BLE remote
 
 Here is the result of ```hcitool leinfo``` for the BLE remote I've used:
-```
+```bash
 pi@raspberrypi:~ $ sudo hcitool leinfo <MAC-ADDRESS>
 Requesting information ...
 	Handle: 64 (0x0040)

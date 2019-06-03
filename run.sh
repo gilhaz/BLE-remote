@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# BLE_remote /run.sh
+# Main script to be run by '/etc/systemd/system/BLE-remote.service'
+# Connect to devices listed in /ble_config.conf file,
+# and watch devices for errors or clicks
+# Creator: Gil Hazan (gilhaz)
 
 # Setting path
 path_="$( cd "$(dirname "$0")" ; pwd -P )"
@@ -8,38 +14,44 @@ if [[ ! -d  $path_/log ]]; then
   sudo chmod 755 $path_/log
 fi
 
-
 # Load 'ble_config.conf' values
 source $path_/ble_config.conf
 # load functions
 source $path_/functions.sh
 
 # Chacking if a mac address was passed to script
-_chack_input ${DEVICES[@]}
+_chack_input ${DEVICES[@]} # array var from '/ble_config.conf'
 
 # Reaset the hci0 to fix connection problams
 _toggle_hci
 
 # Chaching availability of the devices in array
-declare -A devices_list
+declare -A active_devices # declare NAMEs associative arrays ( [ key|value ] array variable )
+declare -A devices_clicks # declare NAMEs associative arrays ( [ key|value ] array variable )
 
 for mac_address in ${DEVICES[@]}; do
-  echo "Attampting to connect to $mac_address"
-  if _check_state $mac_address; then # if the result is 'true'
-
-    if _connect $mac_address; then
-      echo "$mac_address is connected with pid number: $pid"
-    else
-      echo "$mac_address falid to connect, trying again.."
-      sleep 1
-
-      if _connect $mac_address; then
-        echo "$mac_address is connected with pid number: $pid"
-      else
-        echo "$mac_address is unreachable"
-      fi
-    fi
-    # if '_check_state $mac_address' result is 'false'
-  fi
-
+  _run $mac_address
+  sleep 1
 done
+
+# Watch for errors for devices listed in '$active_devices'
+if [[  -z "$active_devices" ]]; then
+  echo "Watching "${!active_devices[@]}" for clicks or errors"
+
+  while [[ true ]]; do
+    if [ ! -z "$(_error_catch)" ]; then
+      echo "Error! restarting"
+      exit 1
+    fi
+
+    for mac_address in ${!active_devices[@]}; do
+    _click_catch $mac_address
+    sleep 1.3
+  done
+  done
+
+else
+  echo "Can't find any of: "${DEVICES[@]}""
+exit 1
+
+fi

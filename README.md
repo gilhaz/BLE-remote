@@ -21,12 +21,12 @@ Requesting information ...
 	Manufacturer: Telink Semiconductor Co. Ltd (529)
 	Features: 0x01 0x00 0x00 0x00 0x00 0x00 0x00 0x00
 ```
-*- You can find the MAC address by running ```hcitool lescan``` and turn on the device*
+>You can find the MAC address by running ```hcitool lescan``` and turn on the device
 
 ### Install bluez (bluetooth protocol stack)
 In Terminal execute the following commands:
 
-*Replace any occurrence of* ```bluez-5.50``` *with the newest version you find in* ***[bluez.org](http://www.bluez.org/download/)***
+*Replace any occurrence of ```bluez-5.50``` with the newest version you find in* ***[bluez.org](http://www.bluez.org/download/)***
 
 ```shell
 sudo wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.50.tar.xz

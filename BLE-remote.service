@@ -1,0 +1,19 @@
+[Unit]
+Description=Connect to iTag ble device with getttool
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+User=root
+Type=simple
+EnvironmentFile=/home/pi/scripts/BLE-remote/ble_config.conf
+ExecStart=/home/pi/scripts/BLE-remote/./run.sh $DEVICES
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+RestartSec=10
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target
+

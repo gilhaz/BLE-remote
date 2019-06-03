@@ -39,3 +39,5 @@ sudo ./configure --enable-library
 sudo make -j8 && sudo make install
 sudo cp attrib/gatttool /usr/local/bin/
 ```
+
+. . . . . NEED MORE INSTRUCTIONS . . . . .

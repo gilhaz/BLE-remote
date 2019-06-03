@@ -4,9 +4,9 @@ Using a BLE remote for home automation with RaspberryPi.
 
 ## Getting Started
 
-- connect to a given MAC address of a BLE device (with a button)
-- listen to clicks being made by the device
-- monitor for disconnect or errors and try to connect again
+- Connect to a given MAC address of a BLE device (with a button)
+- Listen to clicks being made by the device
+- Monitor for disconnect or errors and try to connect again
 
 ### Prerequisites
 - RaspberryPi (tested on pi 3)
@@ -22,7 +22,7 @@ Requesting information ...
 	Features: 0x01 0x00 0x00 0x00 0x00 0x00 0x00 0x00
 ```
 
-### install bluez (bluetooth protocol stack)
+### Install bluez (bluetooth protocol stack)
 In Terminal execute the following commands:
 *Replace any occurrence of 'bluez-5.50' with the newest version you find in [bluez.org](http://www.bluez.org/download/)*
 

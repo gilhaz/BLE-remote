@@ -88,7 +88,6 @@ echo "Addind $1 to active_devices "
 active_devices+=( ["$1"]=$pid )
 
 r=1
-end=$((SECONDS+10)) # using the $SECONDS variable, which has a count of the time that the script (or shell) has been running for
 while [ -z "$connect_grep" ]; do # if [ no state recived ]
   echo $r
   if [[ "$r" != 10 ]]; then
@@ -138,6 +137,11 @@ function _error_catch() {
   return 0
 }
 
+# Send the result to HTTP POST server ( Node-Red on raspberrypi )
+function _http_post() { # - Get key & value & $POST_SERVER (environment variable) as $1 & $2 & $POST_SERVER
+  curl --data "mac_address=$1&clicks=$2" $POST_SERVER
+}
+
 function _click_catch() { # get MAC address as input and returns click count if or )
   log_path="$(_log_file $1)"
   click_grep="$(egrep -o "Notification handle" $log_path | wc -l)"
@@ -152,6 +156,7 @@ if [[ $click_grep != 0 ]] ; then
  fi
  if [[ $click_grep != $saved_clicks ]]; then
    echo "$1 $current_click"
+   _http_post $1 $current_click
  fi
   devices_clicks+=( ["$1"]=$click_grep )
 fi

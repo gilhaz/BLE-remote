@@ -6,6 +6,10 @@
 # and watch devices for errors or clicks
 # Creator: Gil Hazan (gilhaz)
 
+# Getting 'ble_config.conf' values as environment variables from 'BLE-remote.service'
+DEVICES=("${1[@]}")
+POST_SERVER=$2
+
 # Setting path
 path_="$( cd "$(dirname "$0")" ; pwd -P )"
 
@@ -14,8 +18,6 @@ if [[ ! -d  $path_/log ]]; then
   sudo chmod 755 $path_/log
 fi
 
-# Load 'ble_config.conf' values
-source $path_/ble_config.conf
 # load functions
 source $path_/functions.sh
 
@@ -35,7 +37,7 @@ for mac_address in ${DEVICES[@]}; do
 done
 
 # Watch for errors for devices listed in '$active_devices'
-if [[  -z "$active_devices" ]]; then
+if [[ -z "$active_devices" ]]; then
   echo "Watching "${!active_devices[@]}" for clicks or errors"
 
   while [[ true ]]; do

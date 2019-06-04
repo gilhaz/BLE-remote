@@ -7,7 +7,7 @@ After=network-online.target
 User=root
 Type=simple
 EnvironmentFile=/home/pi/scripts/BLE-remote/ble_config.conf
-ExecStart=/home/pi/scripts/BLE-remote/./run.sh $DEVICES
+ExecStart=/home/pi/scripts/BLE-remote/./run.sh ${DEVICES[@]} $POST_SERVER
 StandardOutput=inherit
 StandardError=inherit
 Restart=always
@@ -16,4 +16,3 @@ KillMode=mixed
 
 [Install]
 WantedBy=multi-user.target
-

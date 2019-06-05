@@ -6,8 +6,8 @@ After=network-online.target
 [Service]
 User=root
 Type=simple
-EnvironmentFile=/home/pi/scripts/BLE-remote/ble_config.conf
-ExecStart=/home/pi/scripts/BLE-remote/./run.sh ${DEVICES[@]} $POST_SERVER
+EnvironmentFile=/home/pi/BLE-remote/ble_config.conf
+ExecStart=/home/pi/BLE-remote/./run.sh ${DEVICES[@]} $POST_SERVER
 StandardOutput=inherit
 StandardError=inherit
 Restart=always

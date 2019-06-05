@@ -102,7 +102,7 @@ sudo systemctl start smartthings-mqtt-bridge
 ### Set run on boot
 in Terminal execute the following commands:
 ```shell
-sudo systemctl start smartthings-mqtt-bridge
+sudo systemctl enable smartthings-mqtt-bridge
 ```
 
 # Done!

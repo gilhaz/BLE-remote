@@ -10,8 +10,8 @@ Using a BLE remote for home automation with RaspberryPi.
 
 ### Prerequisites
 - RaspberryPi (tested on pi-3 with 'Raspbian Stretch Lite' install)
-- BLE remote
-:exclamation: ```diff - This script was design to work with a specific BLE device and will probably need modifications to work with other devices.```
+- BLE remote\
+:exclamation: !This script was design to work with a specific BLE device and will probably need modifications to work with other devices.`#f03c15`
 
 Here is the result of ```hcitool leinfo``` for the BLE remote I've used:
 ```shell

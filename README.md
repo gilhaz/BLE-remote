@@ -9,7 +9,7 @@ Using a BLE remote for home automation with RaspberryPi.
 - ***Listen*** to clicks being made by the device
 
 ### Prerequisites
-- RaspberryPi (tested on pi 3)
+- RaspberryPi (tested on pi-3 with 'Raspbian Stretch Lite' install)
 - BLE remote
 
 Here is the result of ```hcitool leinfo``` for the BLE remote I've used:
@@ -21,9 +21,6 @@ Requesting information ...
 	Manufacturer: Telink Semiconductor Co. Ltd (529)
 	Features: 0x01 0x00 0x00 0x00 0x00 0x00 0x00 0x00
 ```
->You can find the MAC address by:\
-First, running ```hcitool lescan```\
-Then, turn on the device and watch for the last one added.
 
 ## Install bluez (bluetooth protocol stack)
 In Terminal execute the following commands:\
@@ -41,9 +38,9 @@ sudo cp attrib/gatttool /usr/local/bin/
 ```
 
 ### Get your device MAC address  
-*find the MAC address by:
+Find the MAC address by:
 - First, running ```hcitool lescan```
-- Then, turn on the device and watch for the last one added.*
+- Then, turn on the device and **watch for the last one added**.
 ```shell
 sudo hciconfig hci0 down; sudo hciconfig hci0 up
 sudo hcitool lescan

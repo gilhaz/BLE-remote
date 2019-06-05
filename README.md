@@ -78,7 +78,7 @@ npm install node-red-dashboard
 *This flow will set HTTP response to POST from BLE-remote script (for use in automation)*
 - Go to your Node-Red GUI (e.g. localhost:1880)
 - Import > Clipboard
-- Past the following flow
+- Past the following [flow](#ble-remote-node-red-flow)
 - Click 'Import'
 - Click 'Deploy'
 

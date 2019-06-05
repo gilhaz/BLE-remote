@@ -99,7 +99,7 @@ sudo systemctl start smartthings-mqtt-bridge
 ```
 >You can watch live status of the service by running ```journalctl -f -u BLE-remote```
 
-### Set run on boot;\
+### Set run on boot
 in Terminal execute the following commands:
 ```shell
 sudo systemctl start smartthings-mqtt-bridge
@@ -107,7 +107,7 @@ sudo systemctl start smartthings-mqtt-bridge
 
 # Done!
 > Now you can:\
-- Run the service\
-- Push the BLE button\
+Run the service\
+Push the BLE button\
 and Watch Node-Red 'Debag' window for Clicks\
-- Merge the result with your automation (node-red dashboard is a good place to start..)
+Merge the result with your automation (node-red dashboard is a good place to start..)

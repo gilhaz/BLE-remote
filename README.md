@@ -75,7 +75,7 @@ sudo systemctl start nodered.service
 npm install node-red-dashboard
 ```
 ### Add Node-Red Flow
-*This flow will set HTTP response to POST from BLE-remote script (for use in automation)*
+*Node-Red flow to set HTTP response to POST from BLE-remote script (for use in automation)*
 - Go to your Node-Red GUI (e.g. localhost:1880)
 - Import > Clipboard
 - Past the following [flow](#ble-remote-node-red-flow)
@@ -92,14 +92,14 @@ Change the 'MAC list' node, to list the MAC address you set in 'ble_config.conf'
 Click 'Deploy'
 
 ## Start The Service
-in Terminal execute the following commands:
+in Terminal execute the following command:
 ```shell
 sudo systemctl start smartthings-mqtt-bridge
 ```
 >You can watch live status of the service by running ```journalctl -f -u BLE-remote```
 
 ### Set run on boot
-in Terminal execute the following commands:
+in Terminal execute the following command:
 ```shell
 sudo systemctl enable smartthings-mqtt-bridge
 ```

@@ -21,7 +21,7 @@ Requesting information ...
 	Manufacturer: Telink Semiconductor Co. Ltd (529)
 	Features: 0x01 0x00 0x00 0x00 0x00 0x00 0x00 0x00
 ```
-> You can check your after installing 'bluez'
+> You can check your's after installing 'bluez'
 
 ## Install bluez (bluetooth protocol stack)
 In Terminal execute the following commands:\
